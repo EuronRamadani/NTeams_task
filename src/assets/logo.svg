@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 2L4 8V24L16 30L28 24V8L16 2Z" fill="#6366F1"/>
-  <path d="M16 2L4 8V24L16 30V2Z" fill="#818CF8"/>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base shape (stylized V) -->
+  <path d="M20 36L4 28V12L20 4L36 12V28L20 36Z" fill="#6366F1"/>
+  <!-- Inner highlight -->
+  <path d="M20 32L8 26V14L20 8L32 14V26L20 32Z" fill="#818CF8"/>
+  <!-- Top dot -->
+  <circle cx="20" cy="10" r="4" fill="#FFFFFF"/>
 </svg>
