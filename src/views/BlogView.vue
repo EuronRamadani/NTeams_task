@@ -163,8 +163,8 @@
               <h3 class="text-xl font-bold text-gray-900 mb-4">
                 10 Best things to do in Tbilisi, Georgia
               </h3>
-              <a
-                href="#"
+              <router-link
+                :to="{ name: 'post', params: { id: index + 1 } }"
                 class="text-[#6366F1] font-medium hover:text-[#4F46E5] inline-flex items-center"
               >
                 Read more
@@ -181,7 +181,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </a>
+              </router-link>
             </div>
           </article>
         </div>

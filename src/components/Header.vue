@@ -2,7 +2,7 @@
   <header class="bg-white py-4">
     <nav class="container mx-auto px-4 flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center">
+      <div class="flex items-center" @click="navigateToHome">
         <img src="@/assets/logo.svg" alt="Native Teams" class="h-8" />
         <span class="ml-2 text-xl font-semibold">Native Teams</span>
       </div>
@@ -59,6 +59,14 @@
 
 <script setup>
 // Component logic can be added here if needed
+
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const navigateToHome = () => {
+  router.push("/");
+};
 </script>
 
 <style scoped>
