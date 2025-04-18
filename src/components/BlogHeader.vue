@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center mb-6">
+  <!-- <div class="flex justify-center mb-6">
     <div class="relative w-16 h-16">
       <div
         class="absolute inset-0 bg-white rounded-2xl shadow-sm flex items-center justify-center"
@@ -14,7 +14,7 @@
         </svg>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="text-center mb-12">
     <h1 class="text-[#6366F1] text-2xl font-medium mb-4">Native Teams Blog</h1>

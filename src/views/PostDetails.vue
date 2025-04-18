@@ -150,31 +150,37 @@
 
         <!-- Explore Section -->
         <div
-          class="mt-16 bg-[#27285C] rounded-2xl p-8 text-center relative overflow-hidden"
+          class="w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] mt-16"
         >
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div
-              class="absolute top-0 left-0 w-32 h-32 bg-[#6366F1]/10 rounded-full -translate-x-16 -translate-y-16"
-            ></div>
-            <div
-              class="absolute bottom-0 right-0 w-32 h-32 bg-[#6366F1]/10 rounded-full translate-x-16 translate-y-16"
-            ></div>
-          </div>
-          <div class="relative z-10">
-            <h2 class="text-3xl font-bold text-white mb-4">
-              Explore Native Teams today
-            </h2>
-            <p class="text-gray-300 max-w-2xl mx-auto mb-8">
-              Unlock the full potential of your teams and elevate your business
-              or personal growth with Native Teams. Explore our platform today
-              and start your journey towards success.
-            </p>
-            <button
-              @click="handleExploreClick"
-              class="inline-flex items-center px-6 py-3 bg-[#6366F1] text-white font-medium rounded-lg hover:bg-[#4F46E5] transition-colors"
-            >
-              Learn more
-            </button>
+          <div class="bg-[#0a0a2b] py-16 relative overflow-hidden">
+            <div class="container mx-auto px-4">
+              <div class="relative z-10">
+                <h2 class="text-3xl font-bold text-white mb-4 text-center">
+                  Explore Native Teams today
+                </h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-center">
+                  Unlock the full potential of your teams and elevate your
+                  business or personal growth with Native Teams. Explore our
+                  platform today and start your journey towards success.
+                </p>
+                <div class="text-center">
+                  <button
+                    @click="handleExploreClick"
+                    class="inline-flex items-center px-6 py-3 bg-[#6366F1] text-white font-medium rounded-lg hover:bg-[#4F46E5] transition-colors"
+                  >
+                    Learn more
+                  </button>
+                </div>
+              </div>
+              <div class="absolute top-0 left-0 w-full h-full">
+                <div
+                  class="absolute top-0 left-0 w-32 h-32 bg-[#6366F1]/10 rounded-full -translate-x-16 -translate-y-16"
+                ></div>
+                <div
+                  class="absolute bottom-0 right-0 w-32 h-32 bg-[#6366F1]/10 rounded-full translate-x-16 translate-y-16"
+                ></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

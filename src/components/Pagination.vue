@@ -1,43 +1,49 @@
 <template>
-  <div class="flex justify-center items-center gap-2">
-    <!-- Previous Button -->
+  <nav class="container flex items-center justify-between">
+    <!-- Previous button -->
     <button
-      class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-[#6366F1] disabled:text-gray-400 disabled:cursor-not-allowed"
-      :disabled="props.currentPage === 1"
-      @click="handlePageChange(props.currentPage - 1)"
+      class="text-gray-400 hover:text-[#6366F1] disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+      :disabled="currentPage === 1"
+      @click="handlePageChange(currentPage - 1)"
     >
       Previous
     </button>
 
-    <!-- Page Numbers -->
-    <div class="flex gap-1">
-      <button
-        v-for="page in 10"
-        :key="page"
-        :class="[
-          'w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium',
-          props.currentPage === page
-            ? 'bg-[#6366F1] text-white'
-            : 'text-gray-700 hover:bg-gray-100',
-        ]"
-        @click="handlePageChange(page)"
-      >
-        {{ page }}
-      </button>
-    </div>
+    <!-- Page numbers -->
+    <ul class="flex items-center gap-2">
+      <li v-for="page in displayedPages" :key="page">
+        <button
+          :class="[
+            'px-3 py-2 text-sm transition-colors',
+            {
+              'text-[#6366F1] font-medium': currentPage === page,
+              'text-gray-600 hover:text-[#6366F1]':
+                currentPage !== page && page !== '...',
+              'text-gray-400 cursor-default': page === '...',
+            },
+          ]"
+          @click="page !== '...' && handlePageChange(page)"
+          :disabled="page === '...'"
+        >
+          {{ page }}
+        </button>
+      </li>
+    </ul>
 
-    <!-- Next Button -->
+    <!-- Next button -->
     <button
-      class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-[#6366F1] disabled:text-gray-400 disabled:cursor-not-allowed"
-      :disabled="props.currentPage === 10"
-      @click="handlePageChange(props.currentPage + 1)"
+      class="text-gray-400 hover:text-[#6366F1] disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+      :disabled="currentPage === totalPages"
+      @click="handlePageChange(currentPage + 1)"
     >
       Next
     </button>
-  </div>
+  </nav>
 </template>
 
 <script setup>
+import { computed } from "vue";
+
 const props = defineProps({
   currentPage: {
     type: Number,
@@ -51,8 +57,43 @@ const props = defineProps({
 
 const emit = defineEmits(["page-change"]);
 
+const displayedPages = computed(() => {
+  const pages = [];
+  const currentPage = props.currentPage;
+  const totalPages = props.totalPages;
+
+  // Always show first page
+  pages.push(1);
+
+  if (currentPage > 3) {
+    pages.push("...");
+  }
+
+  // Show pages around current page
+  for (
+    let i = Math.max(2, currentPage - 1);
+    i <= Math.min(totalPages - 1, currentPage + 1);
+    i++
+  ) {
+    if (!pages.includes(i)) {
+      pages.push(i);
+    }
+  }
+
+  if (currentPage < totalPages - 2) {
+    pages.push("...");
+  }
+
+  // Always show last page if not already included
+  if (totalPages > 1 && !pages.includes(totalPages)) {
+    pages.push(totalPages);
+  }
+
+  return pages;
+});
+
 const handlePageChange = (page) => {
-  if (page >= 1 && page <= 10 && page !== props.currentPage) {
+  if (page >= 1 && page <= props.totalPages && page !== props.currentPage) {
     emit("page-change", page);
   }
 };

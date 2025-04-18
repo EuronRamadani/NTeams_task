@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[#1E1B4B] rounded-xl md:rounded-2xl p-8 md:p-12 text-center relative overflow-hidden mx-4 md:mx-0"
+    class="bg-[#0a0a2b] p-12 md:p-16 text-center relative overflow-hidden md:mx-0 border-t-4 border-t-[#6366F1] min-h-[300px]"
   >
     <div class="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32">
       <div
@@ -14,30 +14,54 @@
         class="w-24 h-24 opacity-20"
       /> -->
     </div>
-    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
-      Never miss out our latest news
-    </h2>
-    <div class="max-w-md mx-auto relative">
-      <form @submit.prevent="handleSubmit" class="flex gap-2">
-        <input
-          v-model="email"
-          type="email"
-          placeholder="Enter your email"
-          class="w-full px-4 md:px-6 py-2.5 md:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent"
-          required
-        />
-        <button
-          type="submit"
-          class="bg-[#6366F1] text-white px-4 md:px-6 py-1.5 md:py-2 rounded-lg hover:bg-[#4F46E5] transition-colors"
-        >
-          Sign up
-        </button>
-      </form>
+
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+        Never miss out our <span class="text-[#6366F1]">latest news</span>
+      </h2>
+      <div class="max-w-xl mx-auto relative px-4 md:px-0">
+        <form @submit.prevent="handleSubmit" class="md:relative">
+          <!-- Mobile view (stacked) -->
+          <div class="flex flex-col gap-3 md:hidden">
+            <input
+              v-model="email"
+              type="email"
+              placeholder="Email address"
+              class="w-full px-6 py-3.5 rounded-full bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent text-base"
+              required
+            />
+            <button
+              type="submit"
+              class="w-full bg-[#6366F1] text-white px-6 py-3.5 rounded-full hover:bg-[#4F46E5] transition-colors text-base font-medium"
+            >
+              Sign up
+            </button>
+          </div>
+
+          <!-- Desktop view (button inside input) -->
+          <div class="hidden md:block">
+            <input
+              v-model="email"
+              type="email"
+              placeholder="Email address"
+              class="w-full px-6 py-3.5 rounded-full bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent text-base"
+              required
+            />
+            <button
+              type="submit"
+              style="height: 100%; right: 0"
+              class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-[#6366F1] text-white px-10 py-2.5 rounded-full hover:bg-[#4F46E5] transition-colors text-base font-medium"
+            >
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+      <p class="text-white/60 text-sm mt-6 px-4 md:px-0">
+        By submitting this form, you will receive emails from Native Teams.<br />
+        For details, view our Privacy Policy.
+      </p>
     </div>
-    <p class="text-white/60 text-xs md:text-sm mt-3 md:mt-4">
-      By submitting this form, you'll receive emails from Native Teams.<br />
-      For details, view our Privacy Policy.
-    </p>
 
     <!-- Success Modal -->
     <TransitionRoot appear :show="isSuccess" as="template">

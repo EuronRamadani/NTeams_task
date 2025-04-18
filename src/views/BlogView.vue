@@ -1,16 +1,21 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen">
     <div class="container mx-auto px-4 pt-28">
       <BlogHeader />
       <SearchBar @search="handleSearch" />
+      <br />
+      <br />
+      <br />
+      <br />
       <CategoryPills @category-selected="handleCategoryChange" />
+      <br />
 
       <!-- Featured Post -->
       <div
         v-if="!loading && articles.length > 0"
         class="bg-white/50 rounded-xl md:rounded-3xl overflow-hidden backdrop-blur-sm mb-8 md:mb-12 mx-4 md:mx-0"
       >
-        <PostCard
+        <PostCardMain
           :title="articles[0].title"
           :description="articles[0].description"
           :image-url="articles[0].urlToImage"
@@ -46,7 +51,7 @@
       </div>
 
       <!-- Pagination -->
-      <div class="px-4 md:px-0">
+      <div class="px-4 md:px-0 mb-12">
         <Pagination
           v-if="articles.length > 0"
           :current-page="activePage"
@@ -56,7 +61,7 @@
       </div>
 
       <!-- Info Section -->
-      <div class="bg-white rounded-xl p-6 md:p-8 mb-12">
+      <!-- <div class="bg-white rounded-xl p-6 md:p-8 mb-12">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">About Our Blog</h2>
         <p class="text-gray-600 mb-4">
           Welcome to our news blog! We provide the latest updates and insights
@@ -81,7 +86,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <ExploreSection @explore-click="handleExploreClick" />
@@ -97,6 +102,7 @@ import BlogHeader from "@/components/BlogHeader.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import CategoryPills from "@/components/CategoryPills.vue";
 import PostCard from "@/components/PostCard.vue";
+import PostCardMain from "@/components/PostCardMain.vue";
 import Pagination from "@/components/Pagination.vue";
 import ExploreSection from "@/components/ExploreSection.vue";
 import NewsletterSection from "@/components/NewsletterSection.vue";
