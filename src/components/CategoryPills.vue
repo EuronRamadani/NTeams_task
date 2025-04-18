@@ -1,11 +1,13 @@
 <template>
   <div class="mb-8 px-4 md:px-0">
-    <div class="flex flex-wrap gap-2 md:gap-3 hide-scrollbar overflow-x-auto">
+    <div
+      class="flex gap-2 md:gap-3 hide-scrollbar overflow-x-auto whitespace-nowrap pb-2 -mb-2"
+    >
       <button
         v-for="category in categories"
         :key="category.id"
         @click="selectCategory(category.id)"
-        class="px-4 py-2 rounded-full text-sm md:text-base transition-colors"
+        class="px-4 py-2 rounded-full text-sm md:text-base transition-colors shrink-0"
         :class="[
           selectedCategory === category.id
             ? 'bg-blue-600 text-white'
@@ -39,5 +41,6 @@ const selectCategory = (categoryId) => {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 </style>

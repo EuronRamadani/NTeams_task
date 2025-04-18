@@ -1,9 +1,7 @@
 <template>
   <footer class="bg-[#1E1B4B] text-white">
-    <!-- Mobile Footer -->
     <div class="md:hidden">
       <div class="container mx-auto px-4 py-8">
-        <!-- Logo -->
         <div class="mb-8">
           <div class="flex items-center">
             <svg
@@ -26,9 +24,7 @@
           </div>
         </div>
 
-        <!-- Collapsible Sections -->
         <div class="space-y-4">
-          <!-- Platform Section -->
           <details class="group">
             <summary class="flex items-center justify-between cursor-pointer">
               <h3 class="font-bold">PLATFORM</h3>
@@ -85,7 +81,6 @@
             </ul>
           </details>
 
-          <!-- Information Section -->
           <details class="group">
             <summary class="flex items-center justify-between cursor-pointer">
               <h3 class="font-bold">INFORMATION</h3>
@@ -137,7 +132,6 @@
             </ul>
           </details>
 
-          <!-- Company Section -->
           <details class="group">
             <summary class="flex items-center justify-between cursor-pointer">
               <h3 class="font-bold">COMPANY</h3>
@@ -195,7 +189,6 @@
         </div>
       </div>
 
-      <!-- Mobile Bottom Links -->
       <div class="border-t border-white/10 py-8">
         <div class="container mx-auto px-4 flex flex-col items-center gap-8">
           <div class="flex gap-8 whitespace-nowrap">
@@ -283,7 +276,6 @@
             </ul>
           </div>
 
-          <!-- Information -->
           <div>
             <h3 class="font-bold mb-4">INFORMATION</h3>
             <ul class="space-y-2">
@@ -320,7 +312,6 @@
             </ul>
           </div>
 
-          <!-- Company -->
           <div>
             <h3 class="font-bold mb-4">COMPANY</h3>
             <ul class="space-y-2">
@@ -362,7 +353,6 @@
           </div>
         </div>
 
-        <!-- Desktop Bottom Links -->
         <div class="border-t border-white/10">
           <div class="flex items-center py-4">
             <span class="text-white/70">© Native Teams Limited</span>
@@ -384,6 +374,4 @@
   </footer>
 </template>
 
-<script setup>
-// Static component, no logic needed
-</script>
+<script setup></script>

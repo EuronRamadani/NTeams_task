@@ -1,6 +1,7 @@
 <template>
   <article
-    class="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray bg-[aliceblue] p-4 sm:p-6 md:p-8 lg:p-[72px] flex flex-col md:flex-row gap-6"
+    style="border-radius: inherit"
+    class="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg border border-[#a8a8a8] bg-[#ebf3ff] p-4 sm:p-6 md:p-8 lg:p-[72px] flex flex-col md:flex-row gap-6"
   >
     <!-- Content Section -->
     <div class="w-full md:w-[55%] relative order-1 md:order-2">

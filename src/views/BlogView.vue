@@ -1,16 +1,12 @@
 <template>
   <div class="min-h-screen">
     <div class="container mx-auto px-4 pt-28">
+      <div class="hidden md:block h-16"></div>
       <BlogHeader />
       <SearchBar @search="handleSearch" />
-      <br />
-      <br />
-      <br />
-      <br />
+      <div class="hidden md:block h-16"></div>
       <CategoryPills @category-selected="handleCategoryChange" />
-      <br />
 
-      <!-- Featured Post -->
       <div
         v-if="!loading && articles.length > 0"
         class="bg-white/50 rounded-xl md:rounded-3xl overflow-hidden backdrop-blur-sm mb-8 md:mb-12 mx-4 md:mx-0"

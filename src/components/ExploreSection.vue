@@ -1,6 +1,5 @@
 <template>
   <div class="bg-[#F8F7FF] py-20 relative overflow-hidden">
-    <!-- Wave Pattern Left -->
     <div class="absolute left-0 bottom-0">
       <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
         <path
@@ -11,7 +10,6 @@
         />
       </svg>
     </div>
-    <!-- Star Pattern Right -->
     <div class="absolute right-0 top-0">
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
         <path
