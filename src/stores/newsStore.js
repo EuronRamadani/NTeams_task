@@ -8,9 +8,9 @@ export const useNewsStore = defineStore("news", () => {
   const error = ref(null);
   const currentPage = ref(1);
   const totalResults = ref(0);
-  const pageSize = 9; // 8 articles per page
-  const maxPages = 10; // Maximum number of pages to show
-  const searchQuery = ref(""); // Default search query
+  const pageSize = 9;
+  const maxPages = 10;
+  const searchQuery = ref("");
   const selectedCategory = ref("all");
 
   const categories = [
@@ -53,15 +53,13 @@ export const useNewsStore = defineStore("news", () => {
         apiKey,
         page,
         pageSize,
-        country: "us", // Default country parameter
+        country: "us",
       };
 
-      // Add query if provided
       if (query) {
         params.q = query;
       }
 
-      // Add category if not 'all'
       if (category !== "all") {
         params.category = category;
       }
